@@ -1,0 +1,23 @@
+<h1>Listing Cars</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Driver Name</th>
+    <th>Image</th>
+    <th></th>
+  </tr>
+ 
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.title %></td>
+      <td><%= car.type %></td>
+      <td><%= car.color %></td>
+      <td><%= car.driverName %></td>
+      <td><%= car.image %></td>
+      <td><%= link_to 'Show', car_path(car) %></td>
+    </tr>
+  <% end %>
+</table>
