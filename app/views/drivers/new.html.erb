@@ -21,6 +21,11 @@
   </p>
  
   <p>
+    <%= form.label :cars %><br>
+    <%= form.collection_select :cars_ids, Car.all, :id, :title, { :include_blank => false }, { :multiple => true } %>
+  </p>
+
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

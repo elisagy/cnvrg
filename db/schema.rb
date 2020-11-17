@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2020_11_17_065144) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "cars_drivers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "car_id"
+    t.integer "driver_id"
+    t.index ["car_id"], name: "index_cars_drivers_on_car_id"
+    t.index ["driver_id"], name: "index_cars_drivers_on_driver_id"
+  end
+
   create_table "drivers", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -38,4 +47,6 @@ ActiveRecord::Schema.define(version: 2020_11_17_065144) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cars_drivers", "cars"
+  add_foreign_key "cars_drivers", "drivers"
 end

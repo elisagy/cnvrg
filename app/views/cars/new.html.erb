@@ -24,6 +24,11 @@
     <%= form.label :image %><br>
     <%= form.text_field :image %>
   </p>
+
+  <p>
+    <%= form.label :drivers %><br>
+    <%= form.collection_select :drivers_ids, Driver.all, :id, :name, { :include_blank => false }, { :multiple => true } %>
+  </p>
  
   <p>
     <%= form.submit %>
