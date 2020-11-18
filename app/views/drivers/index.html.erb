@@ -1,4 +1,5 @@
 <h1>Listing Drivers</h1>
+<%= link_to 'New', "drivers/new" %>
  
 <table>
   <tr>
@@ -6,6 +7,7 @@
     <th>Email</th>
     <th>Birthdate</th>
     <th>Image</th>
+    <th>Cars</th>
     <th></th>
   </tr>
  
@@ -15,6 +17,7 @@
       <td><%= driver.email %></td>
       <td><%= driver.birthdate %></td>
       <td><%= driver.image %></td>
+      <td><%= driver.cars.map { |car| car.title }.join(', ') %></td>
       <td><%= link_to 'Show', driver_path(driver) %></td>
     </tr>
   <% end %>

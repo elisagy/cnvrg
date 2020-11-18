@@ -23,4 +23,9 @@
   <%= @car.image %>
 </p>
 
+<p>
+  <strong>Drivers:</strong>
+  <%= @car.drivers.map { |driver| driver.name }.join(', ') %>
+</p>
+
 <%= link_to 'Back', cars_path %>

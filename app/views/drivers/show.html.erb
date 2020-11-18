@@ -18,4 +18,9 @@
   <%= @driver.image %>
 </p>
 
+<p>
+  <strong>Cars:</strong>
+  <%= @driver.cars.map { |car| car.title }.join(', ') %>
+</p>
+
 <%= link_to 'Back', drivers_path %>
